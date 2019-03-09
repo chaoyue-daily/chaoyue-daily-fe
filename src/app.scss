@@ -1,0 +1,16 @@
+.flex-wrp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-tab{
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: stretch;
+}
+
+.flex-item{
+    flex-grow: 1;
+    text-align: center;
+}
