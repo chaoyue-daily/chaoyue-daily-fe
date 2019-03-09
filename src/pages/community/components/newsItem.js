@@ -6,7 +6,6 @@ import './newsItem.scss'
 class NewsItem extends Component {
     constructor (props) {
         super(props)
-        this.goToDetail = this.goToDetail.bind(this);
     }
     goToDetail = (e) => {
         const { item } = this.props;

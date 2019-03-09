@@ -12,26 +12,21 @@ class ItemList extends Component {
     render() {
         const { category, items } = this.props;
 
-        switch(category){
-            case "activity":
-                return (
-                    <View>
-                        {items.map((item, key) => {return <ActivityItem item={item} key={item.id}/>})}
-                    </View>
-                )
-            case "controbute":
-                return (
-                    <View>
-                        {items.map((item, key) => {return <ControbuteItem item={item} key={item.id}/>})}
-                    </View>
-                )   
-            default:
-                return (
-                    <View>
-                        {items.map((item, key) => {return <NewsItem item={item} key={item.id}/>})}
-                    </View>
-                )   
-        }  
+        if(category === "daily"){
+            return (
+                <View>{category}{items.map((item, key) => {return <NewsItem item={item} key={item.id}/>})}</View>
+            )
+        }
+        else if(category === "activity"){
+            return (
+                <View>{category}{items.map((item, key) => {return <ActivityItem item={item} key={item.id}/>})}</View>
+            )
+        }
+        else if(category === "controbute"){
+            return (
+                <View>{category}{items.map((item, key) => {return <ControbuteItem item={item} key={item.id}/>})}</View>
+            )
+        }
     }
 }
 

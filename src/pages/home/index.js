@@ -3,8 +3,10 @@ import { View, Text } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
 import { login } from '../../store/actions/user'
 //Import custom components,style
-import { tab } from '../../components/tab'
+import shareHoc from '../../hoc/shareHoc';
 import './index.scss'
+
+@shareHoc()
 
 class Index extends Component {
     config = {
@@ -28,7 +30,7 @@ class Index extends Component {
   }
   render () {
     return (
-      <View className='home flex-wrp' onClick={this.toCommunity}>
+      <View className='home' onClick={this.toCommunity}>
         <View><Text>Hello {this.props.user.loginUser}</Text></View>
       </View>
     )

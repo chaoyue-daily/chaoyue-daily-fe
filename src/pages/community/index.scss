@@ -1,5 +1,47 @@
 .community{
+    .header{
+        .headerImg{
+            width: 750px;
+            height: 270px;
+        }
+    }
+
     .scrollview{
        
     }
+
+    .footer{
+        width: 750px;
+        height: 100px;
+        position: fixed;
+        bottom:0;
+        background: #ffffff;
+        color: #bebebe;
+        font-size: 28px;
+        line-height: 100px;
+        box-shadow: 0 2px 2px #bebebe;
+        z-index: 9999;
+      
+        .active {
+          color: #a015ff;
+          border-bottom: solid 2px #a015ff;
+        }
+    }
+}
+
+.flex-wrp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-tab{
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: stretch;
+}
+
+.flex-item{
+    width:250px;
+    text-align: center;
 }

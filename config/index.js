@@ -69,7 +69,7 @@ const config = {
   },
   h5: {
     publicPath: '/',
-    staticDirectory: 'static',
+    staticDirectory: 'asset',
     module: {
       postcss: {
         autoprefixer: {

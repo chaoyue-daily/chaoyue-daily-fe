@@ -1,27 +1,27 @@
 import Taro, { Component } from '@tarojs/taro'
-import { View, ScrollView } from '@tarojs/components'
+import { View, Text, Image, ScrollView } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
 import { login } from '../../store/actions/user'
 //Import custom components,style
-import Header from './components/header'
+import img from '../../assets/header.jpg'
 import ItemList from './components/itemList'
-import Tab from './components/tab'
+import shareHoc from '../../hoc/shareHoc';
 import './index.scss'
+
+@shareHoc()
 
 class Index extends Component {
     config = {
     navigationBarTitleText: '社区页'
   }
-  constructor (props) {
-    super(props)
+  constructor () {
+    super(...arguments)
     this.state = {
       currentTab: 0,
       tabs: [{name:"daily",cName:"日报"}, 
       {name:"activity",cName:"打投"},
       {name:"controbute",cName:"投稿"}],
     }
-    this.backToHome = this.backToHome.bind(this);
-    this.switchTab = this.switchTab.bind(this);
   }
   componentWillReceiveProps (nextProps) {
     console.log(this.props, nextProps)
@@ -34,7 +34,7 @@ class Index extends Component {
   componentDidHide () { }
 
   backToHome = (e) => {
-    Taro.navigateTo({
+    Taro.redirectTo({
       url: '/pages/home/index'
   })
   }
@@ -48,14 +48,26 @@ class Index extends Component {
 
     return (
       <View className='community'>
-        <Header date={"03/09/2019"} imgSrc={""} backToHome={this.backToHome}/>
+        <View className='header' onClick={this.backToHome}>  
+            <Text>{"03/09/2019"}</Text>  
+             {/* Judge whether under h5 enviroment */}
+             { window ? <Image className='headerImg' mode="widthFix" src={img}/> :  <Image className='headerImg' mode="widthFix" src={'../../assets/header.jpg'}/>}      
+        </View  >
         <ScrollView className='scrollview'
             scrollY
             style='height: 500px;'
             scrollWithAnimation>
            <ItemList category={tabs[currentTab].name} items={[{id:1,title:"Item1"},{id:2,title:"Item2"},{id:3,title:"Item3"},{id:4,title:"Item4"},{id:5,title:"Item6"},{id:6,title:"Item6"}]}/>
         </ScrollView> 
-        <Tab tabs={tabs.map(x=>{return x.cName})} currentTab={currentTab} switchTab={this.switchTab}/>
+        <View className='footer flex-wrp flex-tab' >
+            {
+              tabs.map((tab,index) => {
+                return (<View className={currentTab === index ? 'flex-item active' : 'flex-item' } key={index} onClick={this.switchTab.bind(this,index)}>
+                  {tab.cName}
+                </View>)
+              })
+            }
+        </View>
       </View>
     )
   }

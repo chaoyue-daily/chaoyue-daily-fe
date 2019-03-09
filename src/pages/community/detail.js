@@ -5,7 +5,6 @@ class Detail extends Component {
 
   constructor (props) {
     super(props)
-    this.backtoCommunity = this.backtoCommunity.bind(this);
   }
   backtoCommunity = (e) => {
     Taro.navigateBack(2)
