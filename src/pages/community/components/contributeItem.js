@@ -1,9 +1,9 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View } from '@tarojs/components'
 
-import './controbuteItem.scss'
+import './contributeItem.scss'
 
-class ControbuteItem extends Component {
+class ContributeItem extends Component {
     constructor (props) {
         super(props)
     }
@@ -11,11 +11,11 @@ class ControbuteItem extends Component {
         const { item } = this.props;
 
         return (
-            <View className='controbuteItem'>           
+            <View className='contributeItem'>           
                 {item.title}
             </View  >
         )
     }
 }
 
-export default ControbuteItem
+export default ContributeItem

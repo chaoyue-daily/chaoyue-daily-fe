@@ -3,7 +3,7 @@ import { View } from '@tarojs/components'
 
 import NewsItem from './newsItem'
 import ActivityItem from './activityItem'
-import ControbuteItem from './controbuteItem'
+import ContributeItem from './contributeItem'
 
 class ItemList extends Component {
     constructor (props) {
@@ -22,9 +22,9 @@ class ItemList extends Component {
                 <View>{category}{items.map((item, key) => {return <ActivityItem item={item} key={item.id}/>})}</View>
             )
         }
-        else if(category === "controbute"){
+        else if(category === "contribute"){
             return (
-                <View>{category}{items.map((item, key) => {return <ControbuteItem item={item} key={item.id}/>})}</View>
+                <View>{category}{items.map((item, key) => {return <ContributeItem item={item} key={item.id}/>})}</View>
             )
         }
     }

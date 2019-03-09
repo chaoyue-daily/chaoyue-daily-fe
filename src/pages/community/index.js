@@ -20,7 +20,7 @@ class Index extends Component {
       currentTab: 0,
       tabs: [{name:"daily",cName:"日报"}, 
       {name:"activity",cName:"打投"},
-      {name:"controbute",cName:"投稿"}],
+      {name:"contribute",cName:"投稿"}],
     }
   }
   componentWillReceiveProps (nextProps) {
