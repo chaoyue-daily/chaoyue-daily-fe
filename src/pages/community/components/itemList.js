@@ -14,17 +14,17 @@ class ItemList extends Component {
 
         if(category === "daily"){
             return (
-                <View>{category}{items.map((item, key) => {return <NewsItem item={item} key={item.id}/>})}</View>
+                <View>{items.map((item, key) => {return <NewsItem item={item} key={item.id}/>})}</View>
             )
         }
         else if(category === "activity"){
             return (
-                <View>{category}{items.map((item, key) => {return <ActivityItem item={item} key={item.id}/>})}</View>
+                <View>{items.map((item, key) => {return <ActivityItem item={item} key={item.id}/>})}</View>
             )
         }
         else if(category === "contribute"){
             return (
-                <View>{category}{items.map((item, key) => {return <ContributeItem item={item} key={item.id}/>})}</View>
+                <View>{items.map((item, key) => {return <ContributeItem item={item} key={item.id}/>})}</View>
             )
         }
     }
