@@ -1,5 +1,6 @@
 import Taro, { Component } from '@tarojs/taro'
-import { View } from '@tarojs/components'
+import { View,Image } from '@tarojs/components'
+import img from '../../../assets/thumbnail.jpg'
 
 import './newsItem.scss'
 
@@ -18,8 +19,17 @@ class NewsItem extends Component {
         const { item } = this.props;
 
         return (
-            <View className='newsItem' onClick={this.goToDetail}>           
-                {item.title}
+            <View className='newsItem' onClick={this.goToDetail}>
+                <View className="thumbnail-col">
+                    { window ? <Image className='thumbnail' mode="widthFix" src={img}/> :  <Image className='thumbnail' mode="widthFix" src={'../../assets/thumbnail.jpg'}/>}   
+                </View>
+                <View className="title-col">
+                     <View className="title-text">
+                        <View className="title-simple">{item.title}</View>
+                        <View className="title-detail">{item.title}</View>
+                     </View>
+                     <View className="category">{item.category}</View>
+                </View>
             </View  >
         )
     }

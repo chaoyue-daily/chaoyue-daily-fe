@@ -21,7 +21,8 @@ class Index extends Component {
       tabs: [{name:"daily",cName:"日报"}, 
       {name:"activity",cName:"打投"},
       {name:"contribute",cName:"投稿"}],
-      items:[{id:1,title:"Item1"},{id:2,title:"Item2"},{id:3,title:"Item3"},{id:4,title:"Item4"},{id:5,title:"Item5"},{id:6,title:"Item6"}],
+      items:[{id:1,title:"Item1",category:"超越个人动态"},{id:2,title:"Item2",category:"其他相关资讯"},{id:3,title:"Item3",category:"月芽村故事"},
+      {id:4,title:"Item4",category:"超越个人动态"},{id:5,title:"Item5",category:"其他相关资讯"},{id:6,title:"Item6",category:"月芽村故事"}],
       scrollTop: 0,
 
     }

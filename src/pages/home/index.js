@@ -1,8 +1,9 @@
 import Taro, { Component } from '@tarojs/taro'
-import { View, Text } from '@tarojs/components'
+import { View, Text, Swiper, SwiperItem } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
 import { login } from '../../store/actions/user'
 //Import custom components,style
+import Card from './card';
 import shareHoc from '../../hoc/shareHoc';
 import './index.scss'
 
@@ -22,16 +23,12 @@ class Index extends Component {
   componentDidShow () { }
 
   componentDidHide () { }
-  toCommunity(){
-    // 跳转到目的页面，打开新页面
-    Taro.redirectTo({
-      url: '/pages/community/index'
-    })
-  }
+ 
   render () {
     return (
-      <View className='home' onClick={this.toCommunity}>
-        <View><Text>Hello {this.props.user.loginUser}</Text></View>
+      <View className='home'>
+          <View><Text className="home-day">09</Text><Text className="home-date">Mar.2019</Text></View>
+          <Card/>
       </View>
     )
   }
