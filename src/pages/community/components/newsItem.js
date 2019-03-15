@@ -21,7 +21,7 @@ class NewsItem extends Component {
         return (
             <View className='newsItem' onClick={this.goToDetail}>
                 <View className="thumbnail-col">
-                    { window ? <Image className='thumbnail' mode="widthFix" src={img}/> :  <Image className='thumbnail' mode="widthFix" src={'../../assets/thumbnail.jpg'}/>}   
+                    { window ? <Image className='thumbnail' mode="widthFix" src={img}/> :  <Image className='thumbnail' mode="widthFix" src={'../../../assets/thumbnail.jpg'}/>}   
                 </View>
                 <View className="title-col">
                      <View className="title-text">
