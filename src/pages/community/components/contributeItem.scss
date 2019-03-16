@@ -1,8 +1,48 @@
-.contributeItem{
-    height:300px;
-    width:690px;
-    background: #FFFFFF;
-    box-shadow: 0 3px 15px 0 rgba(0,0,0,0.10);
-    padding:24px;
-    margin:24px;
+.contributeItem {
+  height: 400px;
+  background: #FFFFFF;
+  box-shadow: 0 3px 15px 0 rgba(0, 0, 0, 0.10);
+  padding: 30px;
+  margin: 30px;
+
+  .title-row {
+    height: 80px;
+
+    .title-simple {
+      font-size: 30px;
+      color: #000000;
+    }
+
+    .title-detail {
+      opacity: 0.6;
+      font-size: 26px;
+      color: #000000;
+    }
+  }
+
+  .thumbnail-row {
+    // border: 1px solid #B747C2;
+    margin-top:12px;
+    height: 240px;
+  }
+
+  .info-row{
+    margin-top:12px;
+    height: 80px;
+
+    .info{
+        float:left;
+        opacity: 0.6;
+        font-size: 26px;
+        color: #000000;
+    }
+
+    .func-button{
+        float:right;
+        font-size: 26px;
+        color: #B747C2;
+        border: 1px solid #B747C2;
+        padding: 10px 20px;
+    }
+  }
 }

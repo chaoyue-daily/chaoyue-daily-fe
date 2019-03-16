@@ -1,8 +1,47 @@
 .activityItem{
-    height:300px;
-    width:690px;
+    height:240px;
     background: #FFFFFF;
     box-shadow: 0 3px 15px 0 rgba(0,0,0,0.10);
-    padding:24px;
-    margin:24px;
+    padding:30px;
+    margin:30px;
+
+    .thumbnail-col{
+        float: left;
+        .thumbnail{
+            // border: 1px solid #B747C2;
+            height: 240px;
+            width:240px;
+        }
+    }
+    
+    .title-col{
+        float: left;
+        margin-left: 30px;
+        height:240px;
+
+        .title-text{
+            height:180px;
+            .title-simple{
+                font-size: 30px;
+                color: #000000;
+                line-height: 45px;
+            }
+
+            .title-detail{
+                opacity: 0.6;
+                font-size: 26px;
+                color: #000000;
+                height:100px;
+            }
+        }
+
+        .func-button{
+            display:inline-block;
+            margin-right: 12px;
+            font-size: 26px;
+            color: #B747C2;
+            border: 1px solid #B747C2;
+            padding: 10px 20px;
+        }
+    }
 }
