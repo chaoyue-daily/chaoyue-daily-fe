@@ -24,7 +24,8 @@
             .title-simple{
                 font-size: 30px;
                 color: #000000;
-                line-height: 45px;
+                max-width: 300px;
+                // line-height: 45px;
             }
 
             .title-detail{
@@ -40,6 +41,7 @@
             color: #B747C2;
             border: 1px solid #B747C2;
             padding: 10px 20px;
+            max-width: 160px;
         }
     }
 }

@@ -26,7 +26,6 @@ class NewsItem extends Component {
                 <View className='title-col'>
                      <View className='title-text'>
                         <View className='title-simple'>{item.title}</View>
-                        <View className='title-detail'>{item.title}</View>
                      </View>
                      <View className='category'>{item.category}</View>
                 </View>

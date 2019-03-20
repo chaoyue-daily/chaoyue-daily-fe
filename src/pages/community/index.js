@@ -6,6 +6,7 @@ import { login } from '../../store/actions/user'
 import img from '../../assets/header.jpg'
 import ItemList from './components/itemList'
 import shareHoc from '../../hoc/shareHoc';
+import { getArticle } from '../../api/api';
 import './index.scss'
 
 @shareHoc()
@@ -21,8 +22,7 @@ class Index extends Component {
       tabs: [{name:"daily",cName:"日报"}, 
       {name:"activity",cName:"打投"},
       {name:"contribute",cName:"投稿"}],
-      items:[{id:1,title:"Item1",category:"超越个人动态"},{id:2,title:"Item2",category:"其他相关资讯"},{id:3,title:"Item3",category:"月芽村故事"},
-      {id:4,title:"Item4",category:"超越个人动态"},{id:5,title:"Item5",category:"其他相关资讯"},{id:6,title:"Item6",category:"月芽村故事"}],
+      items:[],
       scrollTop: 0,
 
     }
@@ -33,7 +33,11 @@ class Index extends Component {
 
   componentWillUnmount () { }
 
-  componentDidShow () { }
+  componentDidShow () { 
+    getArticle().then((response) => {
+      this.setState({items:response.data.map(x=>{x.category = x.type == 1001 ? "超越个人动态" :  "其他相关资讯";return x;})});
+    });
+  }
 
   componentDidHide () { }
 
