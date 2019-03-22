@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   flex-direction:column;
-  padding-top: 50px;
+  padding-top: 5vh;
 
   .home-day{
     font-size: 80px;
@@ -12,7 +12,18 @@
   }
 
   .home-date{
+    margin-left: 12px;
     font-size: 36px;
     color: #000000;
+  }
+
+  .swiper{
+    width: 750px !important;
+    height:1200px !important;
+
+    .swiperItem{
+      width: 750px !important;
+      height:1200px !important;
+    }
   }
 }

@@ -5,6 +5,7 @@ import { login } from '../../store/actions/user'
 //Import custom components,style
 import Card from './card';
 import shareHoc from '../../hoc/shareHoc';
+import { getSlogan } from '../../api/api';
 import './index.scss'
 
 @shareHoc()
@@ -13,22 +14,40 @@ class Index extends Component {
     config = {
     navigationBarTitleText: '首页'
   }
-
+  constructor () {
+    super(...arguments)
+    this.state = {
+      items:[],
+    }
+  }
   componentWillReceiveProps (nextProps) {
     console.log(this.props, nextProps)
   }
 
   componentWillUnmount () { }
 
-  componentDidShow () { }
+  componentDidShow () { 
+    getSlogan().then((response) => {
+      this.setState({items:response.data});
+    });
+  }
 
   componentDidHide () { }
  
   render () {
+    const { items } = this.state;
+    let date = new Date();
     return (
       <View className='home'>
-          <View><Text className="home-day">09</Text><Text className="home-date">Mar.2019</Text></View>
-          <Card/>
+          <View><Text className="home-day">{date.getDate()}</Text><Text className="home-date">{date.getMonth()}.{date.getFullYear()}</Text></View>
+          <Swiper
+            className='swiper'
+            vertical={false}
+            circular={true}>
+            {items.map((item, key) => {return  <SwiperItem className='swiperItem'>
+              <Card item={item}></Card>
+            </SwiperItem>})}
+          </Swiper>
       </View>
     )
   }

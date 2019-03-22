@@ -19,10 +19,9 @@ class Card extends Component {
 
         return (
             <View className='card' onClick={this.toCommunity}>
-                 <Text className="card-headr">我想抓住天上的星星，织成一张渔网
-捕捉你心里的烦恼</Text>
+                 <Text className="card-headr">{item && item.slogan}</Text>
                  {/* Judge whether under h5 enviroment */}
-                 { window ? <Image mode="widthFix" src={img}/> :  <Image mode="widthFix" src={'../../assets/home.jpg'}/>}    
+                 { window ? <Image src={item.image_url}/> :  <Image mode="widthFix" src={'../../assets/home.jpg'}/>}    
             </View  >
         )
     }

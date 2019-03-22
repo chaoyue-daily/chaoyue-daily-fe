@@ -3,7 +3,7 @@ import { View, Text, Image, ScrollView } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
 import { login } from '../../store/actions/user'
 //Import custom components,style
-import img from '../../assets/header.jpg'
+import img from '../../assets/home.jpg'
 import ItemList from './components/itemList'
 import shareHoc from '../../hoc/shareHoc';
 import { getArticle } from '../../api/api';
@@ -60,12 +60,12 @@ class Index extends Component {
       <View className='community'>
         <View className='header' onClick={this.backToHome}>   
              {/* Judge whether under h5 enviroment */}
-             { window ? <Image className='headerImg' mode="widthFix" src={img}/> :  <Image className='headerImg' mode="widthFix" src={'../../assets/header.jpg'}/>}      
+             { window ? <Image className='headerImg' mode="widthFix" src={img}/> :  <Image className='headerImg' mode="widthFix" src={'../../assets/home.jpg'}/>}      
         </View  >
         <ScrollView className='scrollview'
             scrollY
             scrollTop={scrollTop}
-            style='height: 500px;'
+            style='height: 550px;'
             scrollWithAnimation>
            <ItemList category={tabs[currentTab].name} items={items}/>
         </ScrollView> 

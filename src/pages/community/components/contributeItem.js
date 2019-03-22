@@ -1,6 +1,6 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View,Image } from '@tarojs/components'
-import img from '../../../assets/header.jpg'
+import img from '../../../assets/home.jpg'
 
 import './contributeItem.scss'
 
@@ -25,7 +25,7 @@ class ContributeItem extends Component {
                         <View className='title-detail'>{item.title}</View>
                      </View>
                      <View className='thumbnail-row'>
-                        { window ? <Image className='thumbnail' mode='widthFix' src={img} /> :  <Image className='thumbnail' mode='widthFix' src={'../../../assets/thumbnail.jpg'}/>}   
+                        { window ? <Image className='thumbnail' mode='widthFix' src={img} /> :  <Image className='thumbnail' mode='widthFix' src={'../../../assets/home.jpg'}/>}   
                     </View>
                     <View className='info-row'>
                         <View className='info'>文/进击的大玉螺旋丸（知乎）</View>

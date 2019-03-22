@@ -26,7 +26,7 @@ class ActivityItem extends Component {
                 <View className='title-col'>
                      <View className='title-text'>
                         <View className='title-simple'>{item.title}</View>
-                        <View className='title-detail'>{item.title}</View>
+                        {/* <View className='title-detail'>{item.title}</View> */}
                      </View>
                      <View className='func-button'>转发</View>
                      <View className='func-button'>参与</View>
