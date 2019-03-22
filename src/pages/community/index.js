@@ -6,7 +6,7 @@ import { login } from '../../store/actions/user'
 import img from '../../assets/home.jpg'
 import ItemList from './components/itemList'
 import shareHoc from '../../hoc/shareHoc';
-import { getArticle } from '../../api/api';
+import { getNews,getActivities,getContributes } from '../../api/api';
 import './index.scss'
 
 @shareHoc()
@@ -34,12 +34,29 @@ class Index extends Component {
   componentWillUnmount () { }
 
   componentDidShow () { 
-    getArticle().then((response) => {
-      this.setState({items:response.data.map(x=>{x.category = x.type == 1001 ? "超越个人动态" :  "其他相关资讯";return x;})});
-    });
+    this.getData();
   }
 
   componentDidHide () { }
+
+  getData(index){
+     const { currentTab } = this.state;
+
+     let tab = index != undefined ? index : currentTab;
+     let request = tab == 0 ? getNews :(tab == 1 ? getActivities : getContributes);
+     request().then((response) => {
+       if(index != undefined){
+        this.setState({
+          currentTab: index,
+          items:response.data.map(x=>{x.category = x.type == 1001 ? "超越个人动态" :  (x.type == 1002 ? "其他相关资讯" : "月芽村故事");return x;}),
+          scrollTop: 0 //When switch tab,goto the top
+        })
+       }
+       else{
+        this.setState({items:response.data.map(x=>{x.category = x.type == 1001 ? "超越个人动态" :  (x.type == 1002 ? "其他相关资讯" : "月芽村故事");return x;})});
+       }  
+    });
+  }
 
   backToHome = (e) => {
     Taro.redirectTo({
@@ -47,11 +64,7 @@ class Index extends Component {
   })
   }
   switchTab(index) {
-    this.setState({
-      currentTab: index,
-      items: this.state.items.map(x=>{x.title = x.title.replace("Item",index + "Item"); return x;}),
-      scrollTop: 0 //When switch tab,goto the top
-    })
+    this.getData(index);
   }
   render () {
     const { currentTab, tabs, items, scrollTop } = this.state;

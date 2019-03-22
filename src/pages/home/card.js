@@ -21,7 +21,7 @@ class Card extends Component {
             <View className='card' onClick={this.toCommunity}>
                  <Text className="card-headr">{item && item.slogan}</Text>
                  {/* Judge whether under h5 enviroment */}
-                 { window ? <Image src={item.image_url}/> :  <Image mode="widthFix" src={'../../assets/home.jpg'}/>}    
+                 { window ? <Image src={item.image_url}/> :  <Image src={item.image_url}/>}    
             </View  >
         )
     }

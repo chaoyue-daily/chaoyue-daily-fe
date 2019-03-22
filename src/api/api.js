@@ -4,8 +4,16 @@ export const getSlogan = () => {
     return api.get('slogan')
 }
 
-export const getArticle = () => {
-    return api.get('article')
+export const getNews = () => {
+    return api.get('article/news')
+}
+
+export const getActivities = () => {
+    return api.get('article/activities')
+}
+
+export const getContributes = () => {
+    return api.get('article/contributes')
 }
 
 export const getArticleById = (id) => {

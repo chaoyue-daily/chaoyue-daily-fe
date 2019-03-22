@@ -28,7 +28,7 @@ class Detail extends Component {
     return (
       <View className="detail">
            {/* Judge whether under h5 enviroment */}
-           { window && <View onClick={this.backtoCommunity}>Back</View>}
+           {/* { window && <View onClick={this.backtoCommunity}>Back</View>} */}
            {process.env.TARO_ENV === 'weapp' ? <ParseComponent data={data}/> : 
            <View dangerouslySetInnerHTML={{ __html: data }} />}
       </View  >
