@@ -1,5 +1,9 @@
 .detail{
-    padding: 12px;
+    padding: 2%;
+
+    .detail-title{
+        color:  #CBA7F9;
+    }
     
     p{
         font-size: 24px;
@@ -10,6 +14,69 @@
     }
     
     img{
-        width: 800px;
+        width: 100%;
+    }
+
+    //Copy style from zhihu
+    .LinkCard{
+        position: relative;
+        display: block;
+        margin: 1em auto;
+        box-sizing: border-box;
+        border-radius: 12px;
+        max-width: 100%;
+        overflow: hidden;
+
+        .LinkCard-content {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px;
+            border-radius: inherit;
+            background-color: #f6f6f6;
+
+            .LinkCard-text {
+                overflow: hidden;
+                .LinkCard-title {
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    font-weight: 500;
+                    line-height: 1.25;
+                    color: #1a1a1a;
+                }
+                .LinkCard-meta {
+                    display: flex;
+                    margin-top: 4px;
+                    font-size: 14px;
+                    line-height: 20px;
+                    color: #999;
+                    white-space: nowrap;
+                }
+            }
+
+            .LinkCard-imageCell {
+                margin-left: 8px;
+                border-radius: 6px;
+
+                .LinkCard-image--default {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: #ebebeb;
+                    color: #d3d3d3;
+                }
+
+                .LinkCard-image {
+                    display: block;
+                    width: 60px;
+                    height: 60px;
+                    border-radius: inherit;
+                }
+            }
+        }
     }
 }

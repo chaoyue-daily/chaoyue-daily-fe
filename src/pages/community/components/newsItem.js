@@ -3,7 +3,7 @@ import { View,Image } from '@tarojs/components'
 import img1 from '../../../assets/1001.png'
 import img2 from '../../../assets/1002.png'
 import img3 from '../../../assets/1003.png'
-
+import { getDate } from '../../../utilty/helper';
 import './newsItem.scss'
 
 class NewsItem extends Component {
@@ -29,6 +29,7 @@ class NewsItem extends Component {
                 <View className='title-col'>
                      <View className='title-text'>
                         <View className='title-simple'>{item.title}</View>
+                        <View className='title-detail'>{getDate(item.date)}</View>
                      </View>
                      <View className='category'>{item.category}</View>
                 </View>

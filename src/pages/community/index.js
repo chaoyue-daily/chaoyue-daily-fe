@@ -14,7 +14,6 @@ import contributeImgSelected from '../../assets/contributeselected.svg';
 import ItemList from './components/itemList'
 import shareHoc from '../../hoc/shareHoc';
 import { getNews,getActivities,getContributes } from '../../api/api';
-import { getMonth } from '../../utilty/helper';
 import './index.scss'
 
 @shareHoc()
@@ -27,7 +26,7 @@ class Index extends Component {
     super(...arguments)
     this.state = {
       loading: 1,
-      currentTab: 0,
+      currentTab: this.props.user.currentTab,
       tabs: [{name:"daily",cName:"日报",img:newsImg,imgSelected:newsImgSelected}, 
       {name:"activity",cName:"活动",img:activityImg,imgSelected:activityImgSelected},
       {name:"contribute",cName:"投稿",img:contributeImg,imgSelected:contributeImgSelected}],
@@ -62,6 +61,7 @@ class Index extends Component {
           items:response.data.map(x=>{x.category = x.type == 1001 ? "超越个人动态" :  (x.type == 1002 ? "其他相关资讯" : "月芽村故事");return x;}),
           scrollTop: 0 //When switch tab,goto the top
         })
+        this.props.login(index);
        }
        else{
         this.setState({

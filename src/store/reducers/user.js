@@ -3,14 +3,15 @@ import {
 } from '../const'
 
 const INITIAL_STATE = {
-  loginUser: "Yang Chaoyue"
+  loginUser: "Yang Chaoyue",
+  currentTab: 0,
 }
 
 export default function user (state = INITIAL_STATE, action) {
   const { type,payload } = action;
   switch (type) {
     case LOG_IN:
-      state.loginUser = payload;
+      state.currentTab = payload;
       return {...state}
     default:
       return state
