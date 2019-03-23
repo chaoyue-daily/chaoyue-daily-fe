@@ -1,6 +1,6 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View,Image } from '@tarojs/components'
-import img from '../../../assets/thumbnail.jpg'
+import img from '../../../assets/1005.png'
 import sendImg from '../../../assets/send.svg'
 import joinImg from '../../../assets/join.svg'
 

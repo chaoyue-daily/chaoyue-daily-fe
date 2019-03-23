@@ -1,6 +1,8 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View,Image } from '@tarojs/components'
-import img from '../../../assets/thumbnail.jpg'
+import img1 from '../../../assets/1001.png'
+import img2 from '../../../assets/1002.png'
+import img3 from '../../../assets/1003.png'
 
 import './newsItem.scss'
 
@@ -18,6 +20,7 @@ class NewsItem extends Component {
     render() {
         const { item } = this.props;
 
+        let img = item.type == 1001 ? img1 : ( item.type == 1002 ? img2 : img3);
         return (
             <View className='newsItem' onClick={this.goToDetail}>
                 <View className='thumbnail-col'>
