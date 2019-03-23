@@ -18,6 +18,7 @@
         float: left;
         margin-left: 30px;
         height:240px;
+        width:360px;
 
         .title-text{
             height:180px;
@@ -37,12 +38,18 @@
         }
 
         .func-button{
+            float:right;
             display:inline-block;
             margin-right: 12px;
             font-size: 26px;
-            color: #B747C2;
-            border: 1px solid #B747C2;
+            color: #CBA7F9;
             padding: 10px 20px;
+
+            .taro-img{
+                height: 20px;
+                width: 20px;
+                color: #CBA7F9;
+            }
         }
     }
 }

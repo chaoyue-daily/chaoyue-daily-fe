@@ -3,10 +3,17 @@ import { View, Text, Image, ScrollView } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
 import { login } from '../../store/actions/user'
 //Import custom components,style
-import img from '../../assets/home.jpg'
+import img from '../../assets/home.jpg';
+import newsImg from '../../assets/news.svg';
+import newsImgSelected from '../../assets/newsselected.svg';
+import activityImg from '../../assets/activity.svg';
+import activityImgSelected from '../../assets/activityselected.svg';
+import contributeImg from '../../assets/contribute.svg';
+import contributeImgSelected from '../../assets/contributeselected.svg';
 import ItemList from './components/itemList'
 import shareHoc from '../../hoc/shareHoc';
 import { getNews,getActivities,getContributes } from '../../api/api';
+import { getMonth } from '../../utilty/helper';
 import './index.scss'
 
 @shareHoc()
@@ -19,9 +26,9 @@ class Index extends Component {
     super(...arguments)
     this.state = {
       currentTab: 0,
-      tabs: [{name:"daily",cName:"日报"}, 
-      {name:"activity",cName:"打投"},
-      {name:"contribute",cName:"投稿"}],
+      tabs: [{name:"daily",cName:"日报",img:newsImg,imgSelected:newsImgSelected}, 
+      {name:"activity",cName:"活动",img:activityImg,imgSelected:activityImgSelected},
+      {name:"contribute",cName:"投稿",img:contributeImg,imgSelected:contributeImgSelected}],
       items:[],
       scrollTop: 0,
 
@@ -68,12 +75,13 @@ class Index extends Component {
   }
   render () {
     const { currentTab, tabs, items, scrollTop } = this.state;
+    let date = new Date();
 
     return (
       <View className='community'>
         <View className='header' onClick={this.backToHome}>   
              {/* Judge whether under h5 enviroment */}
-             { window ? <Image className='headerImg' mode="widthFix" src={img}/> :  <Image className='headerImg' mode="widthFix" src={'../../assets/home.jpg'}/>}      
+             { window ? <Image className='headerImg' mode='widthFix' src={img}/> :  <Image className='headerImg' mode='widthFix' src={'../../assets/home.jpg'}/>}      
         </View  >
         <ScrollView className='scrollview'
             scrollY
@@ -85,8 +93,9 @@ class Index extends Component {
         <View className='footer flex-wrp flex-tab' >
             {
               tabs.map((tab,index) => {
-                return (<View className={currentTab === index ? 'flex-item active' : 'flex-item' } key={index} onClick={this.switchTab.bind(this,index)}>
-                  {tab.cName}
+                return (<View className={currentTab === index ? 'flex-item active' : 'flex-item' }  key={index} onClick={this.switchTab.bind(this,index)}>
+                  <View>{currentTab === index ? <Image src={tab.imgSelected}/> : <Image src={tab.img}/>}</View>
+                  <Text className="menu">{tab.cName}</Text>
                 </View>)
               })
             }

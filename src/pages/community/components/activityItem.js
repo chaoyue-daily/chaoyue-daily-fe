@@ -1,6 +1,8 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View,Image } from '@tarojs/components'
 import img from '../../../assets/thumbnail.jpg'
+import sendImg from '../../../assets/send.svg'
+import joinImg from '../../../assets/join.svg'
 
 import './activityItem.scss'
 
@@ -28,8 +30,8 @@ class ActivityItem extends Component {
                         <View className='title-simple'>{item.title}</View>
                         {/* <View className='title-detail'>{item.title}</View> */}
                      </View>
-                     <View className='func-button'>转发</View>
-                     <View className='func-button'>参与</View>
+                     <View className='func-button'><Image src={joinImg}/>参与</View>
+                     <View className='func-button'><Image src={sendImg}/>转发</View>
                 </View>
             </View  >
         )

@@ -26,8 +26,8 @@
         z-index: 9999;
       
         .active {
-          color: #a015ff;
-          border-bottom: solid 2px #a015ff;
+            color: #CBA7F9;
+        //   border-bottom: solid 2px #CBA7F9;
         }
     }
 }
@@ -47,4 +47,16 @@
 .flex-item{
     width:250px;
     text-align: center;
+    cursor: pointer;
+
+    font-size: 20px;
+    .taro-img{
+        height: 60px;
+        width: 60px;
+    }
+
+    .menu{
+        display: block;
+        margin-top:-80px;
+    }
 }

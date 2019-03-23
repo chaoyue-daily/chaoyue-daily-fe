@@ -6,6 +6,7 @@ import { login } from '../../store/actions/user'
 import Card from './card';
 import shareHoc from '../../hoc/shareHoc';
 import { getSlogan } from '../../api/api';
+import { getMonth } from '../../utilty/helper';
 import './index.scss'
 
 @shareHoc()
@@ -39,7 +40,7 @@ class Index extends Component {
     let date = new Date();
     return (
       <View className='home'>
-          <View><Text className="home-day">{date.getDate()}</Text><Text className="home-date">{date.getMonth()}.{date.getFullYear()}</Text></View>
+          <View><Text className='home-day'>{date.getDate()}</Text><Text className='home-date'>{getMonth(date.getMonth())}.{date.getFullYear()}</Text></View>
           <Swiper
             className='swiper'
             vertical={false}

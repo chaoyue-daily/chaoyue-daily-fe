@@ -1,6 +1,7 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View,Image,Icon } from '@tarojs/components'
-import img from '../../../assets/home.jpg'
+import img from '../../../assets/contribute.png'
+import voteImg from '../../../assets/vote.svg'
 
 import './contributeItem.scss'
 
@@ -25,11 +26,11 @@ class ContributeItem extends Component {
                         {/* <View className='title-detail'>{item.title}</View> */}
                      </View>
                      <View className='thumbnail-row'>
-                        { window ? <Image className='thumbnail' mode='widthFix' src={img} /> :  <Image className='thumbnail' mode='widthFix' src={'../../../assets/home.jpg'}/>}   
+                        { window ? <Image className='thumbnail' mode='widthFix' src={img} /> :  <Image className='thumbnail' mode='widthFix' src={'../../../assets/contribute.jpg'}/>}   
                     </View>
                     <View className='info-row'>
-                        <View className='info'>文/超越日报（知乎）</View>
-                        <View className='func-button'>点赞</View>
+                        <View className='info'>文/超越日报</View>
+                        <View className='vote-btn'><Image src={voteImg}/></View>
                     </View>
             </View  >
         )

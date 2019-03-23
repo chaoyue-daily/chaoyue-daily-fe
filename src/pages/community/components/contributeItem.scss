@@ -5,6 +5,10 @@
   padding: 30px;
   margin: 30px;
 
+  .taro-img{
+    width:650px;
+  }
+
   .title-row {
     height: 80px;
 
@@ -37,12 +41,13 @@
         color: #000000;
     }
 
-    .func-button{
+    .vote-btn{
         float:right;
-        font-size: 26px;
-        color: #B747C2;
-        border: 1px solid #B747C2;
-        padding: 10px 20px;
+
+        .taro-img{
+          height: 40px;
+          width: 40px;
+        }
     }
   }
 }
