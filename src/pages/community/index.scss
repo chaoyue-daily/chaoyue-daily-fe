@@ -1,8 +1,9 @@
 .community{
     .header{
+        position: relative;
         .headerImg{
             width: 750px;
-            height: 200px;
+            height: 400px;
 
             img{
                 margin-top: -100px;
@@ -25,7 +26,8 @@
     }
 
     .scrollview{
-       
+       position: relative;
+       margin-top: -100px;
     }
 
     .footer{

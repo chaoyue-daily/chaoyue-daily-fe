@@ -1,5 +1,5 @@
 import Taro, { Component } from '@tarojs/taro'
-import { View,Image,Icon } from '@tarojs/components'
+import { View,Image,Text } from '@tarojs/components'
 import img from '../../../assets/contribute.png'
 import voteImg from '../../../assets/vote.svg'
 
@@ -30,6 +30,7 @@ class ContributeItem extends Component {
                     </View>
                     <View className='info-row'>
                         <View className='info'>文/超越日报</View>
+                        <View className='vote-btn'><View className="vote-count">6666</View></View>
                         <View className='vote-btn'><Image src={voteImg}/></View>
                     </View>
             </View  >

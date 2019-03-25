@@ -2,8 +2,9 @@
   height: 400px;
   background: #FFFFFF;
   box-shadow: 0 3px 15px 0 rgba(0, 0, 0, 0.10);
-  padding: 30px;
-  margin: 30px;
+  border-radius: 16px;
+  padding: 20px;
+  margin: 20px;
 
   .taro-img{
     width:650px;
@@ -13,7 +14,7 @@
     height: 80px;
 
     .title-simple {
-      font-size: 30px;
+      font-size: 20px;
       color: #000000;
     }
 
@@ -39,6 +40,7 @@
         opacity: 0.6;
         font-size: 26px;
         color: #000000;
+        margin-top: 20px;
     }
 
     .vote-btn{
@@ -48,6 +50,15 @@
           height: 40px;
           width: 40px;
         }
+    }
+
+    .vote-count{
+      float:right;
+      opacity: 0.6;
+      font-size: 26px;
+      color: #000000;
+      margin-left: 12px;
+      margin-top: 20px;
     }
   }
 }
