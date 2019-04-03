@@ -94,7 +94,7 @@ class Index extends Component {
         {loading == 0 && <ScrollView className='scrollview'
             scrollY
             scrollTop={scrollTop}
-            style='height: 550px;'
+            style='height: 500px;'
             scrollWithAnimation>
            <ItemList category={tabs[currentTab].name} items={items}/>
         </ScrollView>}
